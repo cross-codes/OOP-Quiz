@@ -44,6 +44,14 @@ Kitty on Linux x86-64
 
 ![kitty_linux1](./img/kitty_screenshot.png)
 ![kitty_linux2](./img/kitty_screenshot_2.png)
+
+Terminal on macOS arm-64
+
+![terminal_macos](./img/macos.jpeg)
+
+VSCode integrated terminal
+
+![vscode_terminal](./img/vscode.jpeg)
 </details>
 
 ---
