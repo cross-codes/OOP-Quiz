@@ -6,12 +6,14 @@ from prettytable import PrettyTable
 from termcolor import colored
 
 
+# Model represents a question and a corresponding answer
 class Model:
     def __init__(self, text: str, answer: str):
         self.question: str = text
         self.answer: str = answer
 
 
+# This class holds all the methods to control aspects of the quiz
 class QuizControl:
     TRUTH_LITERALS = {
         "T",
@@ -40,20 +42,31 @@ class QuizControl:
     }
 
     def __init__(self, positive_marks: int, negative_marks: int):
-        self.questions: dict = {}
-        self.score: int = 0
+        self.questions: dict = {}  # A dictionary containing models as values
+        self.score: int = 0  # The current score including negative and positive marks
         self.stats: dict = {
-            "curr_streak": 0,
-            "streak_arr": [],
-            "correct_questions": 0,
-            "incorrect_questions": 0,
-            "time_intervals": [],
+            "curr_streak": 0,  # Number of questions answered correctly, consecutively
+            "streak_arr": [],  # An array keeping track of all streaks
+            "correct_questions": 0,  # A count of the number of correct questions
+            "incorrect_questions": 0,  # A count of the number of incorrect answers
+            "time_intervals": [],  # An array containing the time taken to answer each question
         }
-        self.plus: int = positive_marks
-        self.minus: int = negative_marks
-        self.unasked_questions: set = set()
-        self.asked_questions: set = set()
-        self.timing: dict = {"time_start": 0.0, "time_end": 0.0}
+        self.plus: int = (
+            positive_marks  # The number of marks to be added per correct question
+        )
+        self.minus: int = (
+            negative_marks  # The number of marks to be added per wrong question
+        )
+        self.unasked_questions: set = (
+            set()
+        )  # A set containing unasked questions and their answers
+        self.asked_questions: set = (
+            set()
+        )  # A set containing asked questions and their answers
+        self.timing: dict = {
+            "time_start": 0.0,
+            "time_end": 0.0,
+        }  # A dictionary containing start and end times for a question
 
     def add_model(self, question: str, answer: str) -> int:
         """
