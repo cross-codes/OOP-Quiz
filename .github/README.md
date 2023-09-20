@@ -43,13 +43,12 @@ atleast 16bit / 16ANSI color, because the app uses the `termcolor` library
 Kitty on Linux x86-64
 
 ![kitty_linux1](./img/kitty_screenshot.png)
-![kitty_linux2](./img/kitty_screenshot_2.png)
 
-Terminal on macOS arm-64
+Terminal on macOS arm-64 (Older commit)
 
 ![terminal_macos](./img/macos.jpeg)
 
-VSCode integrated terminal
+VSCode integrated terminal (Older commit)
 
 ![vscode_terminal](./img/vscode.jpeg)
 </details>
