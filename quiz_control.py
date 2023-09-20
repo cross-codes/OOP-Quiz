@@ -112,11 +112,13 @@ class QuizControl:
         if status is False:
             self.score += self.minus
             self.mod_streak(status)
+            print("Your current score is:", self.score, "\n")
             self.stats["incorrect_questions"] += 1
             return 0
         self.score += self.plus
         self.stats["correct_questions"] += 1
         self.mod_streak(status)
+        print("Your current score is:", self.score, "\n")
         return self.score
 
     def mod_streak(self, status: bool) -> int:
@@ -141,11 +143,11 @@ class QuizControl:
             self.stats["streak_arr"].append(self.stats["curr_streak"])
             self.stats["curr_streak"] = 0
             print(colored("Incorrect answer", "red", attrs=["bold"]))
-            print("Current Streak: ", self.stats["curr_streak"], "\n")
+            print("Current Streak:", self.stats["curr_streak"])
             return 0
         self.stats["curr_streak"] += 1
         print(colored("Correct Answer", "green", attrs=["bold"]))
-        print("Current Streak: ", self.stats["curr_streak"], "\n")
+        print("Current Streak:", self.stats["curr_streak"])
         return 0
 
     def evaluate_response(self, question: str, answer: str, response: str) -> int:
@@ -154,7 +156,7 @@ class QuizControl:
 
         Calls the 'mod_score' instance attribute after evaluating the
         correctness of 'response' with respect to 'question' and its
-        corresponding 'answer'
+        corresponding 'answer'.
 
         Args:
             question (str): The text of the question
