@@ -7,6 +7,9 @@ by the `__init__` method.
 Class literals are accessible by the class itself or any instances (objects)
 of that particular class.
 
+To pass parameters to a class on creating an object you specify them on the
+`__init__` method.
+
 ---
 What is OOP?
 
@@ -26,7 +29,7 @@ attributes and methods of the parent class, and can even override them.
 In python you do it as `class SubClass(ParentClass)`
 
 ```python
-class Vehicle():
+class Vehicle:
     def start_engine(self):
         print("The engine of the vehicle is starting")
 
